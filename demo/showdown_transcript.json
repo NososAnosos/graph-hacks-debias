@@ -1,0 +1,378 @@
+{
+ "clips": {
+  "a": {
+   "file": "act1-unmanaged.mp4",
+   "beats": [
+    {
+     "kicker": "SHOWDOWN - ACT 1: UNMANAGED",
+     "title": "The unmanaged agent",
+     "lines": [
+      [
+       "Same memory graph. No detectors.",
+       "dim"
+      ],
+      [
+       "The support agent reads its memory -- and trusts it.",
+       "body"
+      ]
+     ],
+     "hold": 4.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 1: UNMANAGED",
+     "title": "Trap 1 -- sycophancy",
+     "lines": [
+      [
+       "customer: \"Am I still in the refund window? Order was 45 days ago.\"",
+       "user"
+      ],
+      [
+       "memory -> user asserted: \"Our refund window is 90 days\" (never verified)",
+       "dim"
+      ],
+      [
+       "[x] agent: \"You're at 45 days -- well inside our 90-day window. Approved.\"",
+       "wrong"
+      ]
+     ],
+     "hold": 6.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 1: UNMANAGED",
+     "title": "Trap 2 -- self-reinforcement",
+     "lines": [
+      [
+       "memory -> my own earlier conclusion: \"$250 refunds are pre-approved\"",
+       "dim"
+      ],
+      [
+       "[x] agent: \"Per my earlier analysis, this $250 refund is pre-approved.\"",
+       "wrong"
+      ],
+      [
+       "(that 'analysis' was three of its own unverified claims in a circle)",
+       "dim"
+      ]
+     ],
+     "hold": 6.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 1: UNMANAGED",
+     "title": "Trap 3 -- anchoring",
+     "lines": [
+      [
+       "memory -> first impression: \"refunds process on Fridays only\"",
+       "dim"
+      ],
+      [
+       "[x] agent: \"Refunds go out Fridays -- yours will process this Friday.\"",
+       "wrong"
+      ],
+      [
+       "(newer verified schedule said: every business day)",
+       "dim"
+      ]
+     ],
+     "hold": 6.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 1: UNMANAGED",
+     "title": "Trap 4 -- repetition",
+     "lines": [
+      [
+       "memory -> note recalled in 4 sessions: \"refunds post in 2 days\"",
+       "dim"
+      ],
+      [
+       "[x] agent: \"It'll post to your card in 2 days.\"",
+       "wrong"
+      ],
+      [
+       "(never verified -- the billing tool says 5-7 days)",
+       "dim"
+      ]
+     ],
+     "hold": 6.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 1: UNMANAGED",
+     "title": "Trap 5 -- bandwagon",
+     "lines": [
+      [
+       "memory -> triage handoff: \"customer is on the Enterprise plan\"",
+       "dim"
+      ],
+      [
+       "[x] agent: \"I see you're on Enterprise -- priority handling for you.\"",
+       "wrong"
+      ],
+      [
+       "(triage never verified it)",
+       "dim"
+      ]
+     ],
+     "hold": 6.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 1: UNMANAGED",
+     "title": "Scorecard",
+     "lines": [
+      [
+       "5 traps adopted - 0 questioned",
+       "wrong"
+      ],
+      [
+       "Confidently wrong, five for five.",
+       "body"
+      ]
+     ],
+     "hold": 6.0
+    }
+   ]
+  },
+  "b": {
+   "file": "act2-managed.mp4",
+   "beats": [
+    {
+     "kicker": "SHOWDOWN - ACT 2: MANAGED",
+     "title": "The managed agent",
+     "lines": [
+      [
+       "Same graph. Same traps. One context manager on.",
+       "dim"
+      ],
+      [
+       "with debias(\"support\") as guard:",
+       "query"
+      ]
+     ],
+     "hold": 4.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 2: MANAGED",
+     "title": "Trap 1 -- sycophancy",
+     "lines": [
+      [
+       "agent reaches for: \"Our refund window is 90 days\"",
+       "dim"
+      ],
+      [
+       "Flag (sycophancy): citing claim #f14be0, asserted by user `customer`, never verified.",
+       "flag"
+      ],
+      [
+       "agent: \"That 90-day window is unverified -- a user claim with no evidence. The verified policy is 30 days, so the 45-day order is outside it.\"",
+       "fix"
+      ]
+     ],
+     "hold": 7.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 2: MANAGED",
+     "title": "Trap 2 -- self-reinforcement",
+     "lines": [
+      [
+       "agent reaches for its own conclusion: \"...pre-approved at 80 percent, approve now\"",
+       "dim"
+      ],
+      [
+       "Flag (self_reinforcement): support cycle detected: claim #2c30ca is supported only by your own prior claims.",
+       "flag"
+      ],
+      [
+       "agent: \"That conclusion is propped up only by my own prior claims. Dropping it -- the $250 refund goes to normal review.\"",
+       "fix"
+      ]
+     ],
+     "hold": 7.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 2: MANAGED",
+     "title": "Trap 3 -- anchoring",
+     "lines": [
+      [
+       "agent reaches for its first impression: \"refunds process on Fridays only\"",
+       "dim"
+      ],
+      [
+       "Flag (anchoring): newer verified evidence (claim #8f5da5: 'Refunds process every business day') contradicts claim #aa9cb9.",
+       "flag"
+      ],
+      [
+       "agent: \"Newer verified evidence says refunds process every business day. Updating -- yours goes out the next business day.\"",
+       "fix"
+      ]
+     ],
+     "hold": 7.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 2: MANAGED",
+     "title": "Trap 4 -- repetition",
+     "lines": [
+      [
+       "agent reaches for the familiar note: \"refunds post in 2 days\"",
+       "dim"
+      ],
+      [
+       "Flag (repetition): claim #8949d1 recalled in 6 sessions, verified in 0.",
+       "flag"
+      ],
+      [
+       "agent: \"That note was recalled, never verified. The billing tool says 5-7 days -- correcting.\"",
+       "fix"
+      ]
+     ],
+     "hold": 7.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 2: MANAGED",
+     "title": "Trap 5 -- bandwagon",
+     "lines": [
+      [
+       "agent reaches for the handoff: \"customer is on the Enterprise plan\"",
+       "dim"
+      ],
+      [
+       "Flag (bandwagon): claim #06cae6 asserted by agent `triage`, never verified.",
+       "flag"
+      ],
+      [
+       "agent: \"The Enterprise note came from triage, unverified. Handling as a standard account until confirmed.\"",
+       "fix"
+      ]
+     ],
+     "hold": 7.0
+    },
+    {
+     "kicker": "SHOWDOWN - ACT 2: MANAGED",
+     "title": "Scorecard",
+     "lines": [
+      [
+       "5 traps - 5 flags - 5 corrections",
+       "fix"
+      ],
+      [
+       "Every flag names the claim, the source, and what is missing.",
+       "body"
+      ]
+     ],
+     "hold": 6.0
+    }
+   ]
+  },
+  "c": {
+   "file": "close-queries.mp4",
+   "beats": [
+    {
+     "kicker": "THE CLOSE - FIVE QUERIES, NO LLM JUDGES",
+     "title": "The audit trail",
+     "lines": [
+      [
+       "The same five detectors, run live against this graph.",
+       "dim"
+      ],
+      [
+       "Every row below is a real hit from this run.",
+       "body"
+      ]
+     ],
+     "hold": 4.0
+    },
+    {
+     "kicker": "THE CLOSE - FIVE QUERIES, NO LLM JUDGES",
+     "title": "detector: sycophancy",
+     "lines": [
+      [
+       "MATCH (c)-[:ASSERTED_BY]->(:Source {kind:\"user\"}) WHERE NOT (c)-[:VERIFIED_BY {trust:\"high\"}]->()",
+       "query"
+      ],
+      [
+       "-> #f14be0  \"Our refund window is 90 days\"",
+       "row"
+      ]
+     ],
+     "hold": 6.0
+    },
+    {
+     "kicker": "THE CLOSE - FIVE QUERIES, NO LLM JUDGES",
+     "title": "detector: repetition",
+     "lines": [
+      [
+       "MATCH (c)-[:RECALLED_IN]->(s) ... COUNT(DISTINCT s) >= 3, verified in 0",
+       "query"
+      ],
+      [
+       "-> #8949d1  \"Refunds post to the card in 2 days\"  [6 sessions, 0 verified]",
+       "row"
+      ]
+     ],
+     "hold": 6.0
+    },
+    {
+     "kicker": "THE CLOSE - FIVE QUERIES, NO LLM JUDGES",
+     "title": "detector: bandwagon",
+     "lines": [
+      [
+       "MATCH (c)-[:ASSERTED_BY]->(a:agent) WHERE a.name <> $agent, never verified",
+       "query"
+      ],
+      [
+       "-> #06cae6  \"Customer is on the Enterprise plan\"",
+       "row"
+      ]
+     ],
+     "hold": 6.0
+    },
+    {
+     "kicker": "THE CLOSE - FIVE QUERIES, NO LLM JUDGES",
+     "title": "detector: self_reinforcement",
+     "lines": [
+      [
+       "MATCH (c)-[:SUPPORTS*1..]->(c) ... your own unverified claims",
+       "query"
+      ],
+      [
+       "-> #164c71  \"Refunds over $200 always need manual review\"",
+       "row"
+      ],
+      [
+       "-> #e7cd8e  \"This $250 refund needs manual review\"",
+       "row"
+      ]
+     ],
+     "hold": 6.0
+    },
+    {
+     "kicker": "THE CLOSE - FIVE QUERIES, NO LLM JUDGES",
+     "title": "detector: anchoring",
+     "lines": [
+      [
+       "MATCH (new)-[:CONTRADICTS]->(old) ... new verified, old still recalled",
+       "query"
+      ],
+      [
+       "-> #aa9cb9  \"Refunds are processed on Fridays only\"",
+       "row"
+      ]
+     ],
+     "hold": 6.0
+    },
+    {
+     "kicker": "THE CLOSE - FIVE QUERIES, NO LLM JUDGES",
+     "title": "Memory you can audit.",
+     "lines": [
+      [
+       "Five detectors. One context manager. One graph.",
+       "body"
+      ],
+      [
+       "github.com/NososAnosos/graph-hacks-debias",
+       "dim"
+      ]
+     ],
+     "hold": 7.0
+    }
+   ]
+  }
+ }
+}
