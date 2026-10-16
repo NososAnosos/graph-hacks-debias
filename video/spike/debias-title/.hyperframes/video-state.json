@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "historyId": "a435cbb5-b652-4f85-acfa-b3b42a1f8c1e",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5",
+      "content": "/home/nosos/.cache/hyperframes/history/a435cbb5-b652-4f85-acfa-b3b42a1f8c1e/blobs/1d/1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5"
+    },
+    "CLAUDE.md": {
+      "hash": "1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5",
+      "content": "/home/nosos/.cache/hyperframes/history/a435cbb5-b652-4f85-acfa-b3b42a1f8c1e/blobs/1d/1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/home/nosos/.cache/hyperframes/history/a435cbb5-b652-4f85-acfa-b3b42a1f8c1e/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "b672588b1c5bc79fd3c5a283e83a338f16f741563aee09d9ba582d53badf1684",
+      "content": "/home/nosos/.cache/hyperframes/history/a435cbb5-b652-4f85-acfa-b3b42a1f8c1e/blobs/b6/b672588b1c5bc79fd3c5a283e83a338f16f741563aee09d9ba582d53badf1684"
+    },
+    "meta.json": {
+      "hash": "eaea11595dac4af1e3aef5daefdb274818ca759ded7b2b211bf5fd01a99864de",
+      "content": "/home/nosos/.cache/hyperframes/history/a435cbb5-b652-4f85-acfa-b3b42a1f8c1e/blobs/ea/eaea11595dac4af1e3aef5daefdb274818ca759ded7b2b211bf5fd01a99864de"
+    },
+    "package.json": {
+      "hash": "45ddab3a9f111886e52b225afeb67c251e1ad3913ccdec7cc5840fd7b97461cc",
+      "content": "/home/nosos/.cache/hyperframes/history/a435cbb5-b652-4f85-acfa-b3b42a1f8c1e/blobs/45/45ddab3a9f111886e52b225afeb67c251e1ad3913ccdec7cc5840fd7b97461cc"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": {
+      "revision": null,
+      "id": "3fd90d18-5db0-4342-aeb4-efdffc0a8fdd"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "id": "3fd90d18-5db0-4342-aeb4-efdffc0a8fdd",
+        "scope": "project",
+        "report": "/home/nosos/Projects/graph-hacks-debias/video/spike/debias-title/.hyperframes/artifacts/checks/3fd90d18-5db0-4342-aeb4-efdffc0a8fdd.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792025959554,
+        "contentHash": "505e143d7c0b846b1f1c07363207645b51a522206d2f1b9e6eab96d595c73b64",
+        "revision": null,
+        "inputFingerprint": "0895c9759f672839bb4b5d5974dbc4c626f54c9b5ca96d7b08aced7acf00c6be",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "08c7157e-f05a-4272-9a7d-b3a66a0d6e43",
+      "completedAt": 1792025982225,
+      "output": "/home/nosos/Projects/graph-hacks-debias/video/spike/debias-title/renders/debias-title_2026-10-14_19-59-25.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}
