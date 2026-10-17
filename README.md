@@ -1,7 +1,7 @@
 # Debias: memory you can audit
 
 **A bias-aware memory graph for AI agents, built on FalkorDB.**
-Graph Hacks (WeMakeDevs × FalkorDB), October 2026. Tracks: **02 Agent Memory and Coordination** (primary) and **01 Agents That Act on Connected Data**.
+Graph Hacks (WeMakeDevs × FalkorDB), October 2026. Track: **02 Agent Memory and Coordination**.
 
 Agents remember, but their memories have no immune system. A user's offhand claim gets stored as fact. A conclusion the agent made up three sessions ago gets cited as evidence today. A stale note recalled four times starts to feel true because it's familiar. A peer agent's guess in a handoff gets built on.
 
@@ -23,6 +23,11 @@ with debias("support") as guard:           # opens a session for agent "support"
 [debias] Before you rely on these memories, note the following. ...
 - Flag (sycophancy): citing claim #21c060, asserted by user `customer`, never verified.
 ```
+
+## Demo video
+
+**[Debias — Run the Line](https://youtu.be/60dPDV3XvsQ)** (2:54) — the demo cut to my song “Run the Line.”
+
 
 ## Why a graph
 
